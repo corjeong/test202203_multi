@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>eltest.jsp</title>
 </head>
 <body>
 <!-- 1개 jsp => 자바변수 + el언어변수 (데이터전달)
