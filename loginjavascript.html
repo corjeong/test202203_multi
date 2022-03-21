@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="/jquery/js/jquery-3.6.0.min.js"></script>
+<script>
+$(document).ready(function(){
+	$("form").on('submit', function(ev){
+		//기본동작 action지정 이동-전달 하지마
+		//ev.preventDefault();
+		if($("input:text").val() == 'admin'||
+		$("input:text").val() == 'administrator' ||
+		$("input:text").val() == 'administration'){
+			$('input:hidden').val("admin");
+		}
+		else{
+			$('input:hidden').val("user");
+		}
+		this.action = "loginjs";
+		this.method="post";//405
+		
+	});//on
+});//ready
+</script>
+</head>
+<body>
+<!-- http://localhost:9090/jquery/js/jquery-3.6.0.min.js-->
+<!-- http://localhost:9090/servlettest/loginjavascript.html -->
+<form action="" >
+아이디입력<input type=text name="id" ><br>
+암호입력<input type="password" name="pw" ><br>
+<input type=hidden name="role" >
+<!-- id에 admin  administrator administration 입력하면
+role=admin/user 2개중 하나여야 한다.
+ -->
+<input type=submit value="로그인" >
+
+<br><br>
+
+<!-- get방식 -->
+<a href="login?id=test&pw=1234"> 로그인결과보러가기 </a>
+
+</form>
+</body>
+</html>
+
+
